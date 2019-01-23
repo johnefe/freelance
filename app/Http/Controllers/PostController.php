@@ -25,7 +25,9 @@ class PostController extends Controller
             'reviews.user',
             'freelance'
         ])->get();
+        $related = $post->relatedPosts();
 
-            dd($post);
+           // dd($related);
+        return view('trabajo.detalle-trabajo', compact('post','related'));
     }
 }

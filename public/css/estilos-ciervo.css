@@ -674,3 +674,9 @@ css de las tarjetas de los servicos
     color: #000;
     font-weight: 700;
 }
+/**/
+.text-post{
+    font-size: 15px;
+    color: #310f5c;
+    font-weight: 300;
+}

@@ -93,7 +93,12 @@ class Post extends Model
     }
 
     //para obtener los posts relacionados a cierto post
-    public function relationatedPost(){
+    public function relatedPosts(){
+        return Post::with('reviews')->whereCategoryId($this->category->id)
+            ->where('id','!=', $this->id)
+            ->latest()
+            ->limit(6)
+            ->get();
 
     }
 

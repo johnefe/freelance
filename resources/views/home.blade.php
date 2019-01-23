@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('layouts.css-header')
 @section('content')
 <!--<div class="container">
     <div class="row justify-content-center">
@@ -117,6 +117,6 @@
         <!-- =================== -->
     </div>
 </main>
-@include('layouts.css-header')
+
 @include('layouts.section-subscripcion')
 @endsection

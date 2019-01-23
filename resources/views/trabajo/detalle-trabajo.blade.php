@@ -1,25 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<main class=" red darken-1 promotion">
-    <div class="container">
-
-    </div>
-    </main>
+@include('layouts.css-header')
 
       <!--Main layout-->
-    <main>
-
-        <div class="">
-          <hr class="my-4">
+    <main class="section-2">
+        <hr class="my-4">
+        <div class="col-lg-12 text-center  my-5 py-3 gray-2-bg" align="justify">
+            <a href="" class="color-gay-p link-categoria">Todos</a>
+            <a href="" class="color-gay-p link-categoria">Desarrollo web</a>
+            <a href="" class="color-gay-p link-categoria">Desarrollo movil</a>
+            <a href="" class="color-gay-p link-categoria">Diseño</a>
+            <a href="" class="color-gay-p link-categoria">Actualidad</a>
+            <a href="" class="color-gay-p link-categoria">Emprendimiento</a>
+        </div>
 
         <!-- News Blog Content -->
         <div class="container-fluid p-5">
           <div class="row">
-            <div class="col-lg-12 text-center">
 
-              <p class="color-gay-p">Our duty towards you is to share our experience we're reaching in our work path with you.</p>
-            </div>
             <div class="col-lg-12">
                 <!--********************** -->
                   <!-- Job Description Section -->
@@ -79,23 +78,43 @@
 
                           <li class="media align-items-center pb-2">
                             <div class="media-body">
-                              <h3 class="h6 mb-0">Date posted:</h3>
-                              <small class="text-secondary">June 11, 2018</small>
+                              <h3 class="h6 mb-0">Fecha publicación:</h3>
+                                <small class="text-post">{{$post->created_at->format('d/m/y')}}</small>
                             </div>
                           </li>
                         </ul>
                         <!-- End Contacts List -->
+                        <!-- action button-->
+                        <div class="mb4">
+
+                            @auth
+                                @can('opt_for_post', $post)
+                                    @can('postule',\App\Post::class)
+                                        se puede postular
+                                    @else
+                                        no se puede postular
+                                    @endcan
+                                @else
+                                    no puede postular
+                                @endcan
+                            @else
+
+                            @endauth
+
+                        </div>
+                        <!--end action button -->
                       </div>
 
                       <div class="col-lg-9 order-lg-1">
                         <div class="pr-lg-4">
                           <div class="mb-4">
-                            <h2 class="h3">Job description</h2>
+                            <h2 class="h3 titulo-post">{{$post->name}}</h2>
+                            <p><strong>Oferta publicada por:</strong> {{$post->freelance->user->name}};<strong> Categoria:</strong> {{$post->category->name}}</p>
+                            <p><strong>Inscritos a esta oferta:</strong> {{$post->invitados_count}}</p>
                           </div>
 
-                          <p class="color-gay-p">Our Hardware organization is expanding and growing. From innovative products like Space Home, Chromecast, Pixel Phone, Pixelbook and more, the Product Management team works closely with our engineers to guide products from conception to launch. Product Managers are responsible for guiding products throughout the execution cycle, focusing specifically on analyzing, positioning, packaging, promoting and tailoring our solutions to all the markets where Space does business. As part of the Product Management team, you bridge the technical and business worlds as you design products that our customers love. You have a bias toward action and can break down complex problems into steps that drive product development at Space speed.</p>
+                        <p class="color-gay-p">{{$post->description}}</p>
 
-                          <p class="color-gay-p">Space's mission is to organize the world's information and make it universally accessible and useful. Our Consumer Hardware team researches, designs, and develops new technologies and hardware to make our user's interaction with computing faster, more powerful, and seamless. Whether finding new ways to capture and sense the world around us, advancing form factors, or improving interaction methods, our Consumer Hardware team is making people's lives better through technology.</p>
 
                           <div class="mb-5"></div>
 
@@ -143,14 +162,11 @@
                     </div>
                   </div>
                   <!-- End Job Description Section -->
-
-                <!-- ********************* -->
-
             </div>
-
           </div>
         </div>
         <!-- End News Blog Content -->
-        </div>
     </main>
+    @include('layouts.estima-proyecto')
 @stop
+
