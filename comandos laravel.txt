@@ -1,0 +1,187 @@
+php artisan migrate:fresh --seed
+
+una vez configurado el logueo y registro con redes sociales
+-- sobreescribimos el proceso de registro de laravel
+cuando el usuario se registre tambien lo registre o lo relacione con invitado
+-- inicio navegacion y desplegable para cambiar el idioma
+
+para que funcione el cargeu de imagenes desde el web.php tenemos que aplicar el siguiente comando.
+php artisan storage:link
+
+//
+composer require intervention/image
+composer require barryvdh/laravel-debugbar --dev //para que tenga compatibilidad con l�as demas versiones de laravel
+composer require laravel/cashier
+composer require yajra/laravel-datatables-oracle:"~8.4"
+
+/////////////////////
+vamos a utilizar varios de los paquetes que nos proporciona laravel.
+** cashier: que nos sirve para procesar suscripciones utilizando la plataforma de strike
+**social-lite: que nos permite  ingresar a la plataforma utilizando las redes sociales. facebook, google, github
+
+abrimos una terminal
+composer create-project --prefer-dist laravel/laravel ciervolab
+
+composer global require cretueusebiu/valet-windows
+
+intervention image: nos va a permitir manejar las imagenes de una manera sencilla, la imagen se forma de manera real, se puede mostrar una
+imagen y se puede ocultar la ruta, informacion real de los path
+
+laravel debugbar** sirve para mostrar una barra de debug en nuestra pantalla
+
+datatables:** manejo de tablas con ajax
+
+Vue.js:** sierve para generar el formulario de strike
+
+Instalamos las dependencias
+composer require intervention/image
+composer require barryvdh/laravel-debugbar --dev
+composer require "laravel/cashier":"~7.0"
+composer require yajra/laravel-datatables-oracle:^8.4
+
+despues de esto vamos a config/app
+modificamos por datatables y a?adimos un alias
+'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
+
+php artisan make:model Role -f
+
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:fresh elimina todo y lo crea de nuevo
+
+php artisan make:model Freelance -mf
+php artisan make:model Invitado -mf
+php artisan make:model Level -mf
+php artisan make:model Post -mf
+php artisan make:model Review -mf
+php artisan make:model Role -mf
+php artisan make:model Category -mf
+php artisan make:model Requirement -mf
+php artisan make:model Goal -mf
+
+clase completamemte  vacio, que se la utilizara en una relacion muchos a muchos
+php artisan make:migration create_table_course_invitado
+
+SE INSTALA LARAVEL IDE HELPER
+composer require barryvdh/laravel-ide-helper
+
+generar documentacion para php
+php artisan ide-helper:generate
+php artisan ide-helper:models
+luego se le ya que yes
+si sale warning se debe colocar en composer.json la siguiente linea en require
+"doctrine/dbal": "~2.3"
+composer update y luego
+php artisan ide-helper:models
+*************************************
+para poder cambiar en nuestro app el idioma
+composer require caouecs/laravel-lang:~3.0
+************************************
+INSTALCION DE SOCIAL-LITE inicio del sistema de autenticacion
+
+composer require laravel/socialite
+php artisan make:auth
+php artisan route:list
+*************************************
+CREAR APPS PARA EL INICIO DE SESION CON FACEBOOK Y GITHUB
+https://developers.facebook.com/
+https://github.com/
+https://github.com/settings/developers
+luego de crear las aplicaciones vamos a
+config/services
+//socialite
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => '/login/github/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => '/login/facebook/callback',
+    ],
+
+luego vamos al .env
+y agregamos
+GITHUB_CLIENT_ID
+GITHUB_CLIENT_SECRET
+
+FACEBOOK_CLIENT_ID
+FACEBOOK_CLIENT_SECRET
+
+**************
+DESARRROLLO DE FACTORIAS PARA INSERTAR DATOS RAPIDOS CON FAKER
+aqui se editan los archivos de factories
+
+***************************
+INSERTAR INFORMACION INICAL EN BASE DE DATOS CON SEEDS
+ Storage::delete('posts');
+luego vamos a config/filesystem
+cambiamos local por public
+
+*********************************
+relacionar todos los modelos de la app  con eloquent y finalizar Seeds
+**************************************
+luego de relacionar el modelo de post con los otros modelos procedemos a crear el modelo de UserSocialAccount
+
+php artisan make:model UserSocialAccount
+***************************
+una vez relacionados todos los modelos se va al DatabaseSeeder  se crean factorys para crear Post
+luego de crear esto ejecutmans el comando
+
+php artisan migrate:fresh --seed
+*********************
+instalamos yarn generando archivos que entioende el broswer
+
+***********************************************************************
+para el idioma
+se crear las rutas en el web
+se crea el metodo
+
+***************************************************
+metodo para establecer sesion
+se crea el archivo language en config
+y luego procedemos a crear el middleware
+
+***************************
+en la c�lase 4 seccion 8 se explica como dejar los mensaje s de alerta en los inicis de sesion
+****************************************************
+sobreescribir le proceso de registro de laravel
+
+**************
+se crea y se configura el archivo language.php en config
+***********
+se crea un middleware llamado language
+php artisan artisan make:middleware Language
+**************************************
+se sobre escribe el metodo logot de la aplicacion
+***************************************
+lo del rating esta en la seccion 10 clase 38 y en seguida de este curso un jumbutron para informacion en las pags
+********************
+ruta detalle de un post y controlador PostController y ROute
+php artisan make:controler PostController
+//se crrean los metodos de show para ver un post
+luego se obtiene los detalles de ese post con sus relaciones
+//
+una vez se halla creado el detalle del post se procede a colocar un boton de si el usuario se puede
+aplicar a la oferta laboral
+
+politicas de acceso de laravel Authorization laravel
+crear una policy y mostrar de forma dinamica el boton de accion
+
+writing gates
+para ello creamos PostPolicy
+php artisan make:policy PostPolicy --model=Post
+
+se crea el direcctorio polices
+
+luego en AuthServceProvider debemos configurar las politicas del modelo Post
+
+
+
+
+
+
+

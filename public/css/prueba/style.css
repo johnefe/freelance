@@ -1,0 +1,373 @@
+/*==============================================*/
+.titulo-app{
+	font-family: 'Pacifico', cursive;
+}
+
+
+.view,body,html{
+	height:100%}
+.carousel{height:50%}
+.carousel .carousel-inner,.carousel .carousel-inner .active,.carousel .carousel-inner .carousel-item{
+	height:100%}
+@media (max-width:776px){
+	.carousel{height:100%}
+}
+
+.page-footer,.top-nav-collapse{
+    background-color:#929FBA
+}
+
+@media only screen and (max-width:768px){
+	
+}
+
+/*******************************************************************************************/
+div.wpcf7 {
+	margin: 0;
+	padding: 0;
+}
+
+div.wpcf7 .screen-reader-response {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+div.wpcf7-response-output {
+	margin: 2em 0.5em 1em;
+	padding: 0.2em 1em;
+	border: 2px solid #ff0000;
+}
+
+div.wpcf7-mail-sent-ok {
+	border: 2px solid #398f14;
+}
+
+div.wpcf7-mail-sent-ng,
+div.wpcf7-aborted {
+	border: 2px solid #ff0000;
+}
+
+div.wpcf7-spam-blocked {
+	border: 2px solid #ffa500;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+	border: 2px solid #f7e700;
+}
+
+.wpcf7-form-control-wrap {
+	position: relative;
+}
+
+span.wpcf7-not-valid-tip {
+	color: #f00;
+	font-size: 1em;
+	font-weight: normal;
+	display: block;
+}
+
+.use-floating-validation-tip span.wpcf7-not-valid-tip {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 100;
+	border: 1px solid #ff0000;
+	background: #fff;
+	padding: .2em .8em;
+}
+
+span.wpcf7-list-item {
+	display: inline-block;
+	margin: 0 0 0 1em;
+}
+
+span.wpcf7-list-item-label::before,
+span.wpcf7-list-item-label::after {
+	content: " ";
+}
+
+.wpcf7-display-none {
+	display: none;
+}
+
+div.wpcf7 .ajax-loader {
+	visibility: hidden;
+	display: inline-block;
+	background-image: url('../../images/ajax-loader.gif');
+	width: 16px;
+	height: 16px;
+	border: none;
+	padding: 0;
+	margin: 0 0 0 4px;
+	vertical-align: middle;
+}
+
+div.wpcf7 .ajax-loader.is-active {
+	visibility: visible;
+}
+
+div.wpcf7 div.ajax-error {
+	display: none;
+}
+
+div.wpcf7 .placeheld {
+	color: #888;
+}
+
+div.wpcf7 .wpcf7-recaptcha iframe {
+	margin-bottom: 0;
+}
+
+div.wpcf7 input[type="file"] {
+	cursor: pointer;
+}
+
+div.wpcf7 input[type="file"]:disabled {
+	cursor: default;
+}
+
+div.wpcf7 .wpcf7-submit:disabled {
+	cursor: not-allowed;
+}
+/*============================================
+		post
+=============================================*/
+.main-post{
+	border-top: 3px solid #ef5350; /* #ef5350 rojo*/
+}
+.main-post h4{
+	font-weight: bold;
+}
+.post {
+	margin-top: 8px;
+	margin-bottom: 8px;
+
+}
+
+.sub-post{
+	border:1px solid #bdbdbd !important;
+}
+.sub-post:hover{
+  border-color: #ef5350;
+  box-shadow: 0 0 30px rgba(140, 152, 164, 0.5);
+}
+
+.sub-post2{
+	border:1px solid #bdbdbd !important;
+}
+
+.sub-post2:hover{
+	border-color: #ef5350;
+  box-shadow: 0 0 30px rgba(140, 152, 164, 0.5);
+}
+
+.btn-m a{
+	font-size: 18px;
+}
+.btn-m{
+	padding-bottom: 15px !important;
+}
+.txt-suscribe{
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+/* ===========================================
+	promotion
+=============================================*/
+
+.promotion{
+	padding:2px;
+}
+
+
+/*===========================================*/
+.log-in{
+    border-radius: 3px !important;
+    padding-top: 7px !important;
+    padding-bottom: 3px !important;
+}
+.purple-bg{
+    background-color: #310f5c !important;
+}
+.purple-bg-1{
+    background-color: #481484 !important;
+}
+
+/* =============================================
+content img
+===============================================*/
+.content-img img{
+	width: 100%;
+	max-height: 300px;
+}
+
+.info-1{
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.lb-1-info-1{
+	color: #fff;
+}
+.info-1 h2,p{
+	color: #fff;
+}
+
+/* ===============================================
+	suscribe
+=================================================*/
+
+.suscribe{
+	padding-top: 50px !important;
+	margin-left: 10px;
+	
+}
+.suscribe h3{
+	font-weight: 700;
+	color: #000;
+}
+.suscribe a{
+	font-size: 20px !important;
+	text-decoration: none;
+}
+.suscribe a:hover{
+	color: #fff;
+}
+
+.twitter-block{
+	padding: 15px;
+}
+
+.twitter-block a{
+	color: #03a9f4;
+	font-size: 18px !important;
+}
+.twitter-block a:hover{
+	color: #03a9f4;
+}
+.twitter-block h3{
+	color: #fff;
+
+}
+
+
+/*==================================================*/
+
+.more{  
+	color: #fff;
+	font-size: 18px !important;
+}
+.more:hover{  
+	color: #fff;
+	font-size: 18px !important;
+}
+
+.color-gay-p{
+	color: #37474F;
+}
+
+.size-1{
+	font-size: 18px !important;
+}
+
+/*------------------------------------
+  Tab Modern
+------------------------------------*/
+.tab-modern {
+  border-bottom: none !important;
+}
+
+.tab-modern .tab-modern__nav-link {
+  min-width: 10rem !important;
+  color: #646f79 !important;
+  text-align: center !important;
+  font-weight: 400 !important;
+  border: none !important;
+  border-bottom: 2px solid #e3e6f0 !important;
+  border-radius: 0 !important;
+  padding: 0.5rem !important;
+}
+
+.tab-modern .tab-modern__nav-link-icon {
+  display: block;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  filter: gray;
+  -webkit-filter: grayscale(100%);
+}
+
+.tab-modern .tab-modern__nav-link.active {
+  color: #ef5350 !important;
+  border-bottom-color: #ef5350 !important;
+  background-color: transparen !important;
+}
+
+.tab-modern .tab-modern__nav-link.active .tab-modern__nav-link-icon {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(0%);
+}
+
+.tab-modern .tab-modern__nav-link:hover {
+  color: #ef5350 !important;
+}
+
+.tab-modern .tab-modern__nav-link:hover .tab-modern__nav-link-icon {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(0%);
+}
+
+
+
+/*----------------------------------------------*/
+
+.service{
+	width: 200px;
+	font-size: 18px !important;
+}
+.service:hover{
+	width: 205px;
+	
+}
+
+/*-----------------------------------------------*/
+
+.card-blog a{
+	color:  #ef5350;
+}
+.card-blog a:hover{
+	color:  #ef5350;
+}
+
+.card-blog img:hover {
+	filter: opacity(.5);
+	/*filter: blur(5px);*/
+}
+
+.icon-contact{
+	color: #ef5350;
+}
+
+/*-----------------------------------------------*/
+
+/*------------------------------------
+  Info v1
+------------------------------------*/
+.u-info-v1 {
+  border: 1px solid #e3e6f0;
+  border-top-width: 4px;
+  transition: 0.3s;
+}
+
+.u-info-v1.active, .u-info-v1:hover {
+  border-color: #ef5350;
+  box-shadow: 0 0 35px rgba(140, 152, 164, 0.25);
+}
+
+.time-job span{
+	color: #ef5350 !important;
+}
