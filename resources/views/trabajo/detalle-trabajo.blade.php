@@ -14,6 +14,11 @@
             <a href="" class="color-gay-p link-categoria">Actualidad</a>
             <a href="" class="color-gay-p link-categoria">Emprendimiento</a>
         </div>
+        <div id="app">
+                <stripe-form></stripe-form>
+
+        </div>
+        <h1>asas</h1>
 
         <!-- News Blog Content -->
         <div class="container-fluid p-5">
@@ -86,21 +91,7 @@
                         <!-- End Contacts List -->
                         <!-- action button-->
                         <div class="mb4">
-
-                            @auth
-                                @can('opt_for_post', $post)
-                                    @can('postule',\App\Post::class)
-                                        se puede postular
-                                    @else
-                                        no se puede postular
-                                    @endcan
-                                @else
-                                    no puede postular
-                                @endcan
-                            @else
-
-                            @endauth
-
+                            @include('partitial.posts.action_button')
                         </div>
                         <!--end action button -->
                       </div>
@@ -120,24 +111,13 @@
 
                           <h3 class="h6 text-secondary">Responsibilities:</h3>
 
-                          <ul class="text-secondary">
-                            <li>Partner closely with Engineering, Sales, Marketing, Finance and other product teams across Google to understand their vision, objectives and opportunities for strategic alignment.</li>
-                            <li>Define overall strategy, product roadmap and technical/feature specifications for new products based on long-term product vision, user needs, technical and market trends, and platform capabilities.</li>
-                            <li>Manage product life-cycle from inception through to execution and productization.</li>
-                            <li>Manage the product execution working closely with Engineering, R&D, Industrial Design, Product Design and partner teams to engineer the best experience for our users.</li>
-                            <li>Evaluate mechanical design, CMF and production decisions as part of the product development lifecycle.</li>
-                          </ul>
+                            @include('partitial.posts.goals',['goals' => $post->goals])
 
                           <div class="mb-5"></div>
 
                           <h3 class="h6 text-secondary">Minimum qualifications:</h3>
 
-                          <ul class="text-secondary">
-                            <li>BA/BS degree in Electrical Engineering, Mechanical Engineering, Computer Science, or a related technical field, or equivalent practical experience.</li>
-                            <li>5 years of Product Management experience, with experience in consumer product launches (e.g. shipping consumer electronic products, etc).</li>
-                            <li>Experience in working with cross-functional teams, including Electrical Engineering, Mechanical Engineering, Industrial/Product Design, Sales, Marketing, Finance, Supply Chain, Customer Support, Partnerships, and Legal teams.</li>
-                            <li>Experience with consumer hardware development life cycles and ODM/CM working models. Experience with personal, mobile and embedded device operating systems, and SW applications development life cycles.</li>
-                          </ul>
+                          @include('partitial.posts.requirements',['requirements' => $post->requirements])
 
                           <div class="mb-5"></div>
 
@@ -167,6 +147,7 @@
         </div>
         <!-- End News Blog Content -->
     </main>
+    @include('partitial.posts.related')
     @include('layouts.estima-proyecto')
 @stop
 

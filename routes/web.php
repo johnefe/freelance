@@ -45,8 +45,14 @@ Route::get('/images/{path}/{attachment}', function($path, $attachment) {
 	}
 });
 
+/* rutas para las suscripciones*/
+Route::group(['prefix' => 'subscriptions'], function (){
+    Route::get('/plans','SubscriptionController@plans')->name('subscriptions.plans');
+    Route::post('process_subscription','SubscriptionController@processSubscription')->name('subscriptions.process_subscription');
+});
+
 /* rutas para los post */
 Route::group(['prefix' => 'posts'], function () {
-    Route::get('/{post}', 'PostController@show')->name('course.detail');
+    Route::get('/{post}', 'PostController@show')->name('posts.card-posts');
 });
 

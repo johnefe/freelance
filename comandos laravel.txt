@@ -179,6 +179,42 @@ se crea el direcctorio polices
 
 luego en AuthServceProvider debemos configurar las politicas del modelo Post
 
+//mostrar las metas, requisitos y descripcion de un curso
+
+// SE MUESTRAN LOS CURSOS relacionados
+// luego vamos a STRIPE creamos una cuenta y en api copiamos la api key y la secret en  el .env
+
+//nuestros productos van a ser una subscripcion mensual trimestral y anual
+
+luego de crear los productos enn STRIPE se va a instalar las siguientes dependencias
+
+**Stripe, Vue Tables 2, Vue Resource y desarrollar componente stripeForm
+
+yarn add vue-stripe vue-tables-2 vue-Resource
+
+vue-stripe nos provee formularios para poder mostrar los planes que se ha seleccionado
+
+vue-tables-2 nos sirve para administrar las tablas
+vue-resource nos sirve para hacer peticiones http
+
+luego de ejecutar estos pasos vamos a reosurce/assets/js/components
+y eliminamos el archivo example.
+vamos al archivo app y eliminamos un pedazo de cdigo en el app.js
+
+luego creamos manualmente un vue component stripeForm.vue
+/* revisar esta seccion aun no aparece nada */
+
+se crea un controller para manejar las suscripciones
+
+php artisan make:controller SubscriptionController
+se crean los metodos de planes y de procesar una suscripciones
+y se crean las rutas en el web.php
+
+
+
+
+
+
 
 
 

@@ -54,12 +54,12 @@ class DatabaseSeeder extends Seeder
         factory(\App\Category::class, 5)->create();// creamos tres categorias aleatorias
         factory(\App\Post::class, 50)->create();
 
-        /*factory(\App\Post::class, 50)
+        factory(\App\Post::class, 50)
             ->create()
             ->each(function(\App\Post $p){
-                $p->goals()->saveMany(factory(\App\Goal::class,2)->create());
+               // $p->goals()->saveMany(factory(\App\Goal::class,2)->create());
                 $p->requirements()->saveMany(factory(\App\Requirement::class,4)->create());
-            });*/
+            });
 
     }
 }

@@ -5,7 +5,7 @@
                <!-- <img src="{{ $post->pathAttachment() }}" />-->
             <h5 class="card-title">{{$post->name}}</h5>
             <p class="card-text">{{str_limit($post->description, 100)}}</p>
-            <a href="detailwork.html" class="btn btn-post">Leer más</a>
+            <a href="{{ route('posts.card-posts', $post->slug)}}" class="btn btn-post">Leer más</a>
         </div>
     </div>
 </div>
