@@ -2,28 +2,25 @@
 
 @section('content')
 @include('layouts.css-header')
-<!--<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
 <main class="white-bg">
 
     <hr class="my-4">
+
+        <div class="" id="app">
+            @if(session('message'))
+                <div class="col-lg-12 text-center  my-5 py-3 gray-2-bg" align="justify">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="alert alert-{{session('message')[0]}}">
+                                <h4 class="alert-heding">Mensaje Informativo</h4>
+                                <p>{{session('message')[1]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        </div>
+
     <div class="container-fluid py-5 px-5">
         <!-- =================== -->
           <div class="row">

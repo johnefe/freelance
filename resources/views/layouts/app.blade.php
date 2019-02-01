@@ -12,6 +12,7 @@
 <body>
 
     @include('layouts.nav')
+
   <!--Main layout-->
         @yield('content')
   <!--Main layout-->
