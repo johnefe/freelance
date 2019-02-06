@@ -11,7 +11,7 @@
         <a class="dropdown-item" href="#">Mi Perfil</a>
         <a class="dropdown-item" href="#">Mis Suscripciones</a>
         <a class="dropdown-item" href="#">Mis Cursos</a>
-        <a class="dropdown-item" href="#">Mis Facturas</a>
+        <a class="dropdown-item" href="{{route('invoices.admin')}}">Mis Facturas</a>
         <a class="dropdown-item" href="#">Cursos desarrollados por mi</a>
         <a class="dropdown-item" href="#">Crear Curso</a>
 
