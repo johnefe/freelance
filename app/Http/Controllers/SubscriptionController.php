@@ -63,7 +63,7 @@ class SubscriptionController extends Controller
         }
         return back();
     }
-
+//ssdsdsd
     public function cancel(){
 
         auth()->user()->subscription(\request('plan'))->cancel();
