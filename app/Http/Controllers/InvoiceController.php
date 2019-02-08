@@ -16,4 +16,11 @@ class InvoiceController extends Controller
         }
         return view('invoices.admin', compact('invoices'));
     }
+
+    public function download($id){
+        return \request()->user()->downloadInvoice($id, [
+            "vendor" => "mi empresa",
+            "product" => __("Suscripcion")
+        ]);
+    }
 }

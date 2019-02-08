@@ -6,7 +6,7 @@
         </a>
     @else
         @can('inscribe', $post)
-        <a class="btn btn-subscribe btn-bottom btn-block" href="#">
+        <a class="btn btn-subscribe btn-bottom btn-block" href="{{route('posts.inscribe', ['slug' =>$post->slug])}}">
             <i class="fa fa-bolt">Inscribirme</i>
         </a>
         @else

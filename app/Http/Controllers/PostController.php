@@ -30,4 +30,8 @@ class PostController extends Controller
            // dd($related);
         return view('trabajo.detalle-trabajo', compact('post','related'));
     }
+
+    public function inscribe(Post $post){
+        dd($post);
+    }
 }

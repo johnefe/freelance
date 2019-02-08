@@ -70,6 +70,8 @@ Route::group(['middleware' => ['auth']], function(){
 
 /* rutas para los post */
 Route::group(['prefix' => 'posts'], function () {
+
+    Route::get('/{post}isncribe', 'PostController@inscribe')->name('posts.inscribe')->middleware('auth');
     Route::get('/{post}', 'PostController@show')->name('posts.card-posts');
 });
 

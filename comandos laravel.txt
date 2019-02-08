@@ -210,6 +210,10 @@ php artisan make:controller SubscriptionController
 se crean los metodos de planes y de procesar una suscripciones
 y se crean las rutas en el web.php
 
+/**/
+para editar las facturas se hacer. las facturas se editan en vendor/cashier/receipt
+php artisan vendor:publish
+
 
 
 
